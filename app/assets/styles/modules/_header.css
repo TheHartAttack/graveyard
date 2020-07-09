@@ -1,0 +1,45 @@
+.header {
+    height: 150px;
+    width: 100%;
+    padding: 0 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+
+    &__logo {
+        height: 130px;
+    }
+
+    &__nav {
+        display: inline-grid;
+        list-style: none;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 40px;
+        align-items: center;
+    }
+
+    &__nav-link {
+
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        font-family: 'Moon';
+        font-weight: 700;
+        color: $white;
+        font-size: 2rem;
+
+        &.header__btn {
+            font-size: 1.75rem;
+            color: $black;
+            padding: 20px;
+            background-color: $white;
+        }
+
+    }
+
+}

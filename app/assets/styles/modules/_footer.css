@@ -1,0 +1,26 @@
+.footer {
+    background: $black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__link {
+        display: inline-block;
+    }
+
+    &__logo {
+        height: 30px;
+        display: block;
+    }
+
+    &__paragraph {
+        color: $white;
+        font-family: 'Moon';
+        font-size: 0.5rem;
+        line-height: 1rem;
+        display: inline-block;
+        text-align: right;
+    }
+
+}

@@ -1,0 +1,49 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    border-bottom: 10px solid $red;
+    
+    &__image {
+        min-width: 100%;
+        min-height: 100%;
+        display: block;
+    }
+
+    &__text-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    &__title {
+        color: $white;
+        font-family: 'Moon';
+        font-size: 4rem;
+        font-weight: 400;
+        margin: 0 0 20px;
+        text-shadow: 2px 2px 4px #000;
+
+        @mixin atMedium {
+            font-size: 6rem;
+        }    
+
+    }
+
+    &__subtitle {
+        color: $white;
+        font-family: 'Moon';
+        font-size: 2rem;
+        text-shadow: 2px 2px 4px #000;
+
+        @mixin atMedium {
+            font-size: 3rem;
+        } 
+
+    }
+
+}

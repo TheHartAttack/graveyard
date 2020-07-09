@@ -1,0 +1,128 @@
+.reviews {
+    position: relative;
+    padding: 50px 0;
+    background-image: url('assets/images/cthulhu.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+    &::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    &__heading {
+        color: $white;
+        grid-column: 1/4;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 150px;
+        font-family: 'Moon';
+        font-weight: 400;
+        font-size: 2rem;
+
+        @mixin atMedium {
+            margin-bottom: 200px;
+            font-size: 3rem;
+        }
+
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 40px;
+    }
+
+    @mixin atMedium {
+        padding: 100px 0;
+    }
+
+}
+
+.review {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    position: relative;
+    grid-column: 1/4;
+    margin-bottom: 150px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__image-border {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 100%;
+        position: absolute;
+        transform: translate(-50%);
+        top: -110px;
+        left: 50%;
+        height: 220px;
+        width: 220px;
+        clip-path: polygon(0 0, 220px 0, 220px 110.4px, 0 110.4px);
+    }
+    
+    &__image {
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        position: relative;
+        top: -100px;
+        margin-bottom: -75px;
+
+        @mixin atMedium {
+            margin-bottom: -70px;
+        }
+
+    }
+
+    &__name {
+        color: $black;
+        margin-bottom: 1rem;
+        font-family: 'Moon';
+        font-weight: 400;
+        font-size: 1.5rem;
+
+        @mixin atMedium {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+    }
+
+    &__paragraph {
+        color: $black;
+        padding: 0 20px 20px;
+        font-family: 'Moon';
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.5rem;
+
+        @mixin atMedium {
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            padding: 0 40px 40px;
+        }
+
+    }
+
+    @mixin atMedium {
+        margin-bottom: 0;
+    }
+
+    @mixin atLarge {
+        grid-column: unset;
+    }
+    
+}
