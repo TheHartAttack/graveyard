@@ -10,12 +10,16 @@
     
     <header class="header">
         <img class="header__logo" src="./assets/images/graveyard-logo.png" alt="The Graveyard">
-        <ul class="header__nav">
+        <ul class="header__menu-content">
             <li><a class="header__nav-link" href="#">About</a></li>
             <li><a class="header__nav-link" href="#">Menu</a></li>
             <li><a class="header__nav-link" href="#">Reviews</a></li>
             <li><a class="header__nav-link header__btn" href="#">Contact</a></li>
         </ul> 
+        <div class="header__menu-btn">
+            <div class="header__menu-bar"></div>
+            <div class="header__menu-bar"></div>
+        </div>
     </header>
 
     <section class="hero">
@@ -95,9 +99,18 @@
     </section>
 
     <section class="images">
-        <img class="images__image" src="assets/images/5.jpg" alt="">
-        <img class="images__image" src="assets/images/3.jpg" alt="">
-        <img class="images__image" src="assets/images/4.jpg" alt="">
+        <picture class="images__picture">
+            <source srcset="assets/images/5.jpg" media="(min-width: 1201px)">
+            <img class="images__image" src="assets/images/5-400.jpg" alt="The Graveyard bar">
+        </picture>
+        <picture class="images__picture">
+            <source srcset="assets/images/3.jpg" media="(min-width: 1201px)">
+            <img class="images__image" src="assets/images/3-400.jpg" alt="The Graveyard bar">
+        </picture>
+        <picture class="images__picture">
+            <source srcset="assets/images/4.jpg" media="(min-width: 1201px)">
+            <img class="images__image" src="assets/images/4-400.jpg" alt="The Graveyard bar">
+        </picture>
     </section>
 
     <section class="menu">
@@ -137,9 +150,18 @@
     </section>
 
     <section class="images">
-        <img class="images__image" src="assets/images/7.jpg" alt="">
-        <img class="images__image" src="assets/images/6.jpg" alt="">
-        <img class="images__image" src="assets/images/8.jpg" alt="">
+        <picture class="images__picture">
+            <source srcset="assets/images/7.jpg" media="(min-width: 1201px)">
+            <img class="images__image" src="assets/images/7-400.jpg" alt="The Graveyard bar">
+        </picture>
+        <picture class="images__picture">
+            <source srcset="assets/images/6.jpg" media="(min-width: 1201px)">
+            <img class="images__image" src="assets/images/6-400.jpg" alt="The Graveyard bar">
+        </picture>
+        <picture class="images__picture">
+            <source srcset="assets/images/8.jpg" media="(min-width: 1201px)">
+            <img class="images__image" src="assets/images/8-400.jpg" alt="The Graveyard bar">
+        </picture>
     </section>
 
     <section class="menu">

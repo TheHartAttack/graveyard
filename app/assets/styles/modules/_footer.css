@@ -2,6 +2,7 @@
     background: $black;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
@@ -20,7 +21,19 @@
         font-size: 0.5rem;
         line-height: 1rem;
         display: inline-block;
-        text-align: right;
+        text-align: center;
+        margin-top: 20px;
+
+        @mixin atSmall {
+            text-align: right;
+            margin-top: 0;
+        }
+    
+
+    }
+
+    @mixin atSmall {
+        flex-direction: row;
     }
 
 }

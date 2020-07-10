@@ -28,6 +28,10 @@
 
     }
 
+    @mixin atMedium {
+        padding: 100px 0;
+    }
+
 }
 
 .menu-item {
@@ -76,10 +80,6 @@
 
     @mixin atSmall {
         grid-column: unset;
-    }
-
-    @mixin atMedium {
-        padding: 100px 0;
     }
 
 }

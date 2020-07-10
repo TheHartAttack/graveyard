@@ -1,26 +1,66 @@
 .header {
-    height: 150px;
     width: 100%;
     padding: 0 40px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9;
+    flex-direction: column;
 
-    &__logo {
-        height: 130px;
+    @mixin atLarge {
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
-    &__nav {
-        display: inline-grid;
+    &__logo {
+        height: 150px;
+        width: auto;
+        max-width: 100%;;
+        padding: 10px 0;
+
+        @mixin atSmall {
+            height: 150px;
+            width: auto;
+        }
+
+    }
+
+    &__menu-content {
         list-style: none;
-        grid-template-columns: repeat(4, auto);
-        grid-gap: 40px;
+        grid-gap: 20px;
         align-items: center;
+        align-self: center;
+        justify-items: center;
+        display: inline-grid;
+        padding: 20px 0;
+        position: absolute;
+        top: 150px;
+        left: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        width: 100%;
+        z-index: -1;
+        transition: left 250ms ease-out;
+
+        &--is-visible {
+            left: 0;
+        }
+
+        @mixin atLarge {
+            display: inline-grid;
+            grid-gap: 40px;
+            grid-template-columns: repeat(4, auto);
+            padding: 0px;
+            position: static;
+            top: unset;
+            background-color: unset;
+            width: unset;
+        }
+
     }
 
     &__nav-link {
@@ -40,6 +80,76 @@
             background-color: $white;
         }
 
+    }
+
+    &__menu-btn {
+        height: 22px;
+        width: 25px;
+        position: absolute;
+        right: 40px;
+        top: 110px;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: '';
+            background-color: $white;
+            height: 4px;
+            width: 25px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 250ms ease-out;
+        }
+
+        &:after {
+            content: '';
+            background-color: $white;
+            height: 4px;
+            width: 25px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: opacity 250ms ease-out;
+        }
+
+        &--active {
+
+            &:before, &:after {
+                opacity: 0;
+            }
+
+            & .header__menu-bar {
+
+                &:first-of-type {
+                    transform: rotate(45deg) scaleX(1.25);
+                }
+
+                &:last-of-type {
+                    transform: rotate(135deg) scaleX(1.25);
+                }
+
+            }
+
+        }
+        
+
+        @mixin atSmall {
+            top: 65px;
+        }
+
+        @mixin atLarge {
+            display: none;
+        }
+
+    }
+
+    &__menu-bar {
+        background-color: $white;
+        height: 4px;
+        width: 25px;
+        position: absolute;
+        transition: transform 250ms ease-out;
     }
 
 }
