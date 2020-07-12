@@ -9,12 +9,12 @@
 <body>
     
     <header class="header">
-        <img class="header__logo" src="./assets/images/graveyard-logo.png" alt="The Graveyard">
+        <a href="#"><img class="header__logo" src="./assets/images/graveyard-logo.png" alt="The Graveyard"></a>
         <ul class="header__menu-content">
-            <li><a class="header__nav-link" href="#">About</a></li>
-            <li><a class="header__nav-link" href="#">Menu</a></li>
-            <li><a class="header__nav-link" href="#">Reviews</a></li>
-            <li><a class="header__nav-link header__btn" href="#">Contact</a></li>
+            <li><a class="header__nav-link" id="about-link" href="#about">About</a></li>
+            <li><a class="header__nav-link" id="menu-link" href="#menu">Menu</a></li>
+            <li><a class="header__nav-link" id="reviews-link" href="#reviews">Reviews</a></li>
+            <li><a class="header__nav-link header__btn open-modal" href="#">Contact</a></li>
         </ul> 
         <div class="header__menu-btn">
             <div class="header__menu-bar"></div>
@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero page-section">
         <picture>
             <source srcset="assets/images/hero-1920.jpg" media="(min-width: 1441px)">
             <source srcset="assets/images/hero-1440.jpg" media="(min-width: 961px)">
@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="about page-section" id="about" data-matching-link="#about-link">
         <div class="wrapper">
             <div class="about__inner">
                 <picture class="about__picture">
@@ -62,145 +62,149 @@
         </div>
     </section>
 
-    <section class="menu">
-        <div class="wrapper">
-            <div class="menu__grid">
-                <h3 class="menu__heading">Cocktails</h3>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+    <section class="page-section" id="menu" data-matching-link="#menu-link">
+
+        <div class="menu">
+            <div class="wrapper">
+                <div class="menu__grid">
+                    <h3 class="menu__heading">Cocktails</h3>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="images">
-        <picture class="images__picture">
-            <source srcset="assets/images/5.jpg" media="(min-width: 1201px)">
-            <img class="images__image" src="assets/images/5-400.jpg" alt="The Graveyard bar">
-        </picture>
-        <picture class="images__picture">
-            <source srcset="assets/images/3.jpg" media="(min-width: 1201px)">
-            <img class="images__image" src="assets/images/3-400.jpg" alt="The Graveyard bar">
-        </picture>
-        <picture class="images__picture">
-            <source srcset="assets/images/4.jpg" media="(min-width: 1201px)">
-            <img class="images__image" src="assets/images/4-400.jpg" alt="The Graveyard bar">
-        </picture>
-    </section>
+        <div class="images">
+            <picture class="images__picture">
+                <source srcset="assets/images/5.jpg" media="(min-width: 1201px)">
+                <img class="images__image" src="assets/images/5-400.jpg" alt="The Graveyard bar">
+            </picture>
+            <picture class="images__picture">
+                <source srcset="assets/images/3.jpg" media="(min-width: 1201px)">
+                <img class="images__image" src="assets/images/3-400.jpg" alt="The Graveyard bar">
+            </picture>
+            <picture class="images__picture">
+                <source srcset="assets/images/4.jpg" media="(min-width: 1201px)">
+                <img class="images__image" src="assets/images/4-400.jpg" alt="The Graveyard bar">
+            </picture>
+        </div>
 
-    <section class="menu">
-        <div class="wrapper">
-            <div class="menu__grid">
-                <h3 class="menu__heading">Cocktails</h3>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+        <div class="menu">
+            <div class="wrapper">
+                <div class="menu__grid">
+                    <h3 class="menu__heading">Cocktails</h3>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="images">
-        <picture class="images__picture">
-            <source srcset="assets/images/7.jpg" media="(min-width: 1201px)">
-            <img class="images__image" src="assets/images/7-400.jpg" alt="The Graveyard bar">
-        </picture>
-        <picture class="images__picture">
-            <source srcset="assets/images/6.jpg" media="(min-width: 1201px)">
-            <img class="images__image" src="assets/images/6-400.jpg" alt="The Graveyard bar">
-        </picture>
-        <picture class="images__picture">
-            <source srcset="assets/images/8.jpg" media="(min-width: 1201px)">
-            <img class="images__image" src="assets/images/8-400.jpg" alt="The Graveyard bar">
-        </picture>
-    </section>
+        <div class="images">
+            <picture class="images__picture">
+                <source srcset="assets/images/7.jpg" media="(min-width: 1201px)">
+                <img class="images__image" src="assets/images/7-400.jpg" alt="The Graveyard bar">
+            </picture>
+            <picture class="images__picture">
+                <source srcset="assets/images/6.jpg" media="(min-width: 1201px)">
+                <img class="images__image" src="assets/images/6-400.jpg" alt="The Graveyard bar">
+            </picture>
+            <picture class="images__picture">
+                <source srcset="assets/images/8.jpg" media="(min-width: 1201px)">
+                <img class="images__image" src="assets/images/8-400.jpg" alt="The Graveyard bar">
+            </picture>
+        </div>
 
-    <section class="menu">
-        <div class="wrapper">
-            <div class="menu__grid">
-                <h3 class="menu__heading">Cocktails</h3>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+        <div class="menu">
+            <div class="wrapper">
+                <div class="menu__grid">
+                    <h3 class="menu__heading">Cocktails</h3>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
-                    <div class="menu-item__inner">
-                        <h4 class="menu-item__heading">Rainbow Ritual</h4>
-                        <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                    <div class="menu-item">
+                        <img class="menu-item__image" src="assets/images/cocktail-1.png" alt="">
+                        <div class="menu-item__inner">
+                            <h4 class="menu-item__heading">Rainbow Ritual</h4>
+                            <p class="menu-item__paragraph">Skittles vodka, Monster energy</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
-    <section class="reviews">
+    <section class="reviews page-section" id="reviews" data-matching-link="#reviews-link">
         <div class="wrapper">
             <div class="reviews__grid">
                 <h3 class="reviews__heading">Reviews</h3>

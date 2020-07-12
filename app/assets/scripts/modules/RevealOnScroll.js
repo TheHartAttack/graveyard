@@ -15,7 +15,6 @@ constructor(els, thresholdPercent){
 events(){
     window.addEventListener('scroll', this.scrollThrottle)
     window.addEventListener('resize', debounce(() => {
-        console.log('Resized')
         this.browserHeight = window.innerHeight
     }, 200))
 }

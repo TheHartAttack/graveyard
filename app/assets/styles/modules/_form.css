@@ -1,0 +1,51 @@
+.form {
+    position: relative;
+    flex-direction: column;
+    font-family: 'Moon';
+    width: 100%;
+    max-width: 960px;
+
+    &__body {
+        display: grid;
+        grid-row-gap: 20px;
+
+        &--hidden {
+            visibility: hidden;
+        }
+
+    }
+
+    &__group {
+        justify-self: center;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-gap: 20px;
+        width: 100%;
+        align-items: center;
+        font-size: 1.25rem;
+    }
+
+    &__input {
+        padding: 10px;
+        font-weight: 700;
+
+        &--text-area {
+            resize: none;
+            height: 10rem;
+        }
+
+    }
+
+    &__button {
+        justify-self: center;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    &__message {
+        font-size: 1rem;
+        margin-top: 20px;
+        margin-bottom: calc(-20px - 1rem);
+    }
+}

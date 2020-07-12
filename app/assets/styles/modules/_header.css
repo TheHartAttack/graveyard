@@ -10,22 +10,22 @@
     left: 0;
     z-index: 9;
     flex-direction: column;
-
+ 
     @mixin atLarge {
         flex-direction: row;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.5);
     }
 
     &__logo {
         height: 150px;
         width: auto;
-        max-width: 100%;;
+        max-width: 100%;
         padding: 10px 0;
+        display: block;
+        transition: height 250ms ease-out;
 
-        @mixin atSmall {
-            height: 150px;
-            width: auto;
+        &--scrolled {
+            height: 100px;
         }
 
     }
@@ -44,10 +44,14 @@
         background-color: rgba(0, 0, 0, 0.75);
         width: 100%;
         z-index: -1;
-        transition: left 250ms ease-out;
+        transition: left 250ms ease-out, top 250ms ease-out;
 
         &--is-visible {
             left: 0;
+        }
+
+        &--scrolled {
+            top: 100px;
         }
 
         @mixin atLarge {
@@ -72,12 +76,34 @@
         font-weight: 700;
         color: $white;
         font-size: 2rem;
+        position: relative;
 
         &.header__btn {
             font-size: 1.75rem;
             color: $black;
             padding: 20px;
             background-color: $white;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 5px;
+            width: 5px;
+            border: 1px solid transparent;
+            border-radius: 100%;
+            background-color: transparent;
+            transition: background-color 250ms ease-out, border-color 250ms ease-out;
+        }
+
+        &--is-current-link {
+            &::after {
+                background-color: $red;
+                border-color: $white;
+            }
         }
 
     }
@@ -90,6 +116,7 @@
         top: 110px;
         display: flex;
         align-items: center;
+        transition: top 250ms ease-out;
 
         &:before {
             content: '';
@@ -133,9 +160,17 @@
 
         }
         
+        &--scrolled {
+            top: 40px;
+        }
 
         @mixin atSmall {
             top: 65px;
+
+            &--scrolled {
+                top: 40px;
+            }
+
         }
 
         @mixin atLarge {

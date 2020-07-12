@@ -1,0 +1,12 @@
+.loading {
+    height: 50px;
+    width: 50px;
+    background-color: $white;
+    opacity: 1;
+    border-radius: 100%;
+    margin: auto;
+    animation: loading 1s ease-out infinite;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
