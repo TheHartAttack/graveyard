@@ -2,6 +2,7 @@ class Modal {
 
     constructor(){
         this.injectHTML()
+        this.html = document.querySelector('html')
         this.modal = document.querySelector('.modal')
         this.closeModalButton = document.querySelector('.modal__close')
         this.contactForm = document.querySelector('.form')
@@ -18,9 +19,11 @@ class Modal {
 
     openTheModal(){
         this.modal.classList.add('modal--is-visible')
+        this.html.classList.add('html--no-scroll')
     }
     
     closeTheModal(){
+        this.html.classList.remove('html--no-scroll')
         this.modal.classList.remove('modal--is-visible')
         this.contactFormMessage.innerHTML = ''
     }
@@ -52,11 +55,11 @@ class Modal {
         <div class="modal__close">🗙</div>
             <div class="modal__inner">
                 <div class="modal__section">
-                    <h4 class="modal__title">Phone:</h4>
+                    <h4 class="modal__title">Call:</h4>
                     <p class="modal__content">07895667979</p>
                 </div>
                 <div class="modal__section">
-                    <h4 class="modal__title">Email:</h4>
+                    <h4 class="modal__title">Message:</h4>
                     <form class="form">
                         <div class="form__body">
                             <div class="form__group">

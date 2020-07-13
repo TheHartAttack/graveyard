@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Moon';
     font-weight: 700;
-    src: url('../../fonts/MoonBold.otf');
+    src: url('../fonts/moonbold.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'Moon';
     font-weight: 400;
-    src: url('../../fonts/MoonLight.otf');
+    src: url('../fonts/moonlight.otf') format('opentype');
 }

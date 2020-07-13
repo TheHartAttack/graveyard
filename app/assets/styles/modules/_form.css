@@ -17,9 +17,6 @@
 
     &__group {
         justify-self: center;
-        display: grid;
-        grid-template-columns: 100px 1fr;
-        grid-gap: 20px;
         width: 100%;
         align-items: center;
         font-size: 1.25rem;
@@ -28,10 +25,17 @@
     &__input {
         padding: 10px;
         font-weight: 700;
+        width: 100%;
+        margin-top: 5px;
+
+        &:focus {
+            outline-color: $red;
+        }
 
         &--text-area {
             resize: none;
             height: 10rem;
+            font-size: 0.875rem;
         }
 
     }

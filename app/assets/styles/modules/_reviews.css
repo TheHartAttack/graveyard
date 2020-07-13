@@ -1,7 +1,7 @@
 .reviews {
     position: relative;
     padding: 50px 0;
-    background-image: url('assets/images/cthulhu.jpg');
+    background-image: url('../images/cthulhu.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;

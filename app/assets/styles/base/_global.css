@@ -4,8 +4,13 @@
     padding: 0;
 }
 
-html {
+.html {
     scroll-behavior: smooth;
+
+    &--no-scroll {
+        overflow: hidden;
+    }
+
 }
 
 .container {
