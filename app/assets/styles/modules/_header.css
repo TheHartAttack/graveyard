@@ -116,6 +116,7 @@
         top: 110px;
         display: flex;
         align-items: center;
+        cursor: pointer;
         transition: top 250ms ease-out;
 
         &:before {

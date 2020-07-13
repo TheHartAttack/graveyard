@@ -39,14 +39,28 @@ class Modal {
         this.contactFormBody.classList.add('form__body--hidden')
         this.contactFormMessage.innerHTML = ''
         this.contactForm.insertAdjacentHTML('beforeend', '<div class="loading"></div>')
-        setTimeout(() => {
-            document.querySelector('.loading').remove()
-            this.contactFormBody.classList.remove('form__body--hidden')
-            this.contactFormMessage.innerHTML = `
-                <p class="form__message">Thank you - your message has been sent.</p>
-            `
-        }, 3000)
+
+        this.messageSent().then(() => {
+            setTimeout(() => {
+                this.closeTheModal()
+            }, 3000)
+        }).catch(err => {
+            console.log(err)
+        })       
         
+    }
+
+    messageSent(){
+        return new Promise(resolve => {
+            setTimeout(() => {
+                document.querySelector('.loading').remove()
+                this.contactFormBody.classList.remove('form__body--hidden')
+                this.contactFormMessage.innerHTML = `
+                    <p class="form__message">Thank you - your message has been sent.</p>
+                `
+                resolve()
+            }, 3000)
+        })
     }
 
     injectHTML(){
