@@ -2,6 +2,8 @@ const currentTask = process.env.npm_lifecycle_event
 const path = require('path')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const fse = require('fs-extra')
 
 const postCSSPlugins = [
     require('postcss-import'),
@@ -11,22 +13,44 @@ const postCSSPlugins = [
     require('autoprefixer')
 ]
 
+class RunAfterCompile {
+    apply(compiler){
+        compiler.hooks.done.tap('Copy images', function(){
+            fse.copySync('./app/assets/images', './docs/assets/images')
+            fse.copySync('./app/assets/fonts', './docs/assets/fonts')
+        })
+    }
+}
+
 let cssConfig = {
     test: /\.css$/i,
     use: ['css-loader', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
 }
-
 let fontsConfig = { 
-    test: /\.(png|woff|woff2|eot|ttf|svg|otf|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-    loader: 'url-loader?limit=100000' 
+    test: /\.(woff|woff2|eot|ttf|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+    loader: 'url-loader' 
 }
+let imagesConfig = { 
+    test: /\.(png|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+    loader: 'url-loader' 
+}
+let pages = fse.readdirSync('./app').filter(function(file){
+    return file.endsWith('.html')
+}).map(function(page){
+    return new HtmlWebpackPlugin({
+        filename: page,
+        template: `./app/${page}`
+    })
+})
 
 let config = {
     entry: './app/assets/scripts/App.js',
+    plugins: pages,
     module: {
         rules: [
             cssConfig,
-            fontsConfig
+            fontsConfig,
+            imagesConfig
         ]
     }
 }
@@ -50,17 +74,32 @@ if (currentTask == 'dev'){
 }
 
 if (currentTask == 'build'){
+    config.module.rules.push({
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env']
+            }
+        }
+    })
     cssConfig.use.unshift(MiniCssExtractPlugin.loader)
+    postCSSPlugins.push(require('cssnano'))
     config.output = {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'docs')
     }
     config.mode = 'production'
     config.optimization = {
         splitChunks: {chunks: 'all'}
     }
-    config.plugins = [new CleanWebpackPlugin(), new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'})]
+    config.plugins.push(
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
+        new RunAfterCompile()
+    )
 }
 
 module.exports = config
