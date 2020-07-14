@@ -96,7 +96,7 @@ if (currentTask == 'build'){
         splitChunks: {chunks: 'all'}
     }
     config.plugins.push(
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
         new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
         new RunAfterCompile()
     )
