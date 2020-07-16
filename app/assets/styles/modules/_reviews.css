@@ -81,11 +81,6 @@
         position: relative;
         top: -100px;
         margin-bottom: -75px;
-
-        @mixin atMedium {
-            margin-bottom: -70px;
-        }
-
     }
 
     &__name {
@@ -94,12 +89,6 @@
         font-family: 'Moon';
         font-weight: 400;
         font-size: 1.5rem;
-
-        @mixin atMedium {
-            font-size: 2rem;
-            margin-bottom: 1.25rem;
-        }
-
     }
 
     &__paragraph {
@@ -111,8 +100,6 @@
         line-height: 1.5rem;
 
         @mixin atMedium {
-            font-size: 1.25rem;
-            line-height: 1.875rem;
             padding: 0 40px 40px;
         }
 

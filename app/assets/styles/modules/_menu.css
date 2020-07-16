@@ -51,7 +51,7 @@
         width: 50px;
 
         @mixin atSmall {
-            width: 100px;
+            width: 75px;
         }
 
     }
@@ -66,11 +66,11 @@
         color: $white;
         font-family: 'Moon';
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin-bottom: 0.5rem;
 
         @mixin atMedium {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
@@ -84,8 +84,8 @@
         line-height: 1.5rem;
 
         @mixin atMedium {
-            font-size: 1.5rem;
-            line-height: 2.25rem;
+            font-size: 1.125rem;
+            line-height: 1.6875rem;
         }
 
     }

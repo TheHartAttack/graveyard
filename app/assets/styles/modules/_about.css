@@ -89,10 +89,10 @@
             margin-bottom: 0;
         }
 
-        @mixin atMedium {
+        /*@mixin atMedium {
             font-size: 1.25rem;
             line-height: 1.875rem;
-        }
+        }*/
 
     }
 
