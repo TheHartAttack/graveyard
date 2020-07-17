@@ -25,7 +25,7 @@
         transition: height 250ms ease-out;
 
         &--scrolled {
-            height: 100px;
+            height: 90px;
         }
 
     }
@@ -51,7 +51,7 @@
         }
 
         &--scrolled {
-            top: 100px;
+            top: 90px;
         }
 
         @mixin atLarge {
