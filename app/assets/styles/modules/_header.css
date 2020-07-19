@@ -17,7 +17,7 @@
     }
 
     &__logo {
-        height: 120px;
+        height: 140px;
         width: auto;
         max-width: 100%;
         padding: 10px 0;
@@ -26,6 +26,14 @@
 
         &--scrolled {
             height: 90px;
+        }
+
+        &--red {
+            fill: $red;
+        }
+
+        &--white {
+            fill: $white;
         }
 
     }
@@ -39,7 +47,7 @@
         display: inline-grid;
         padding: 20px 0;
         position: absolute;
-        top: 120px;
+        top: 140px;
         left: 100%;
         background-color: rgba(0, 0, 0, 0.75);
         width: 100%;
@@ -113,7 +121,7 @@
         width: 25px;
         position: absolute;
         right: 40px;
-        top: 80px;
+        top: 95px;
         display: flex;
         align-items: center;
         cursor: pointer;
